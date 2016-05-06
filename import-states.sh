@@ -24,7 +24,7 @@ if [ -e $DIR/$ZIP ]; then
  echo $DIR/$ZIP already exists, not downloading
 else
  echo Downloading $URL...
- curl -f -# --output "$DIR/$ZIP-tmp" "$URL" && mv "$DIR/$NAME-tmp" "$DIR/$NAME"
+ wget -nv -O "$DIR/$ZIP-tmp" "$URL" && mv "$DIR/$ZIP-tmp" "$DIR/$ZIP"
 fi
 
 if [ -e $DIR/$SHP ]; then
