@@ -1,5 +1,5 @@
-NHDHRDV1 Database
-=================
+SHEDS NHDHRDV1 Database
+=======================
 
 [Jeffrey D Walker, PhD](http://walkerenvres.com)
 
@@ -13,8 +13,8 @@ DBNAME=nhdhrdv1
 ./import-states.sh $DBNAME /path/to/states
 ./import-catchments.sh $DBNAME /path/to/catchments
 ./import-wbd.sh $DBNAME /path/to/wbd
+./create-catchment_huc12.sh $DBNAME
 psql -d $DBNAME -c "VACUUM ANALYZE;"  # clean up
-./create-catchment_huc12.sh
 ```
 
 The `states` and `wbd` datasets will be downloaded automatically from the web to their respective folders.
@@ -24,3 +24,5 @@ The `catchments` script assumes the catchments folder contains the NHDHRDV1 shap
 All shapefiles will be converted to WGS84 (EPSG:4326) before being imported.
 
 All tables will be created within the `public` schema.
+
+This repo is part of the [Spatial Hydro-Ecological Decision System](http://ecosheds.org).
